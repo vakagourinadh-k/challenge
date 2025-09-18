@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #34495e;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #1abc9c;
+    }
+
+    .main-content {
+      margin-left: 270px;
+      padding: 20px;
+      width: calc(100% - 270px);
+    }
+
+    .main-content h1 {
+      color: #2c3e50;
+    }
+
+    .card {
+      background-color: #ecf0f1;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card .stat {
+      font-size: 30px;
+      font-weight: bold;
+      color: #3498db;
+    }
+
+    .card .button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card .button:hover {
+      background-color: #2980b9;
+    }
+
+    .header {
+      background-color: #34495e;
+      padding: 15px;
+      color: white;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .stat-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .stat-container .card {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 200px;
+      }
+      .main-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sidebar {
+        width: 150px;
+      }
+      .main-content {
+        margin-left: 170px;
+        width: calc(100% - 170px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Healthcare Dashboard</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Patient Overview</a>
+    <a href="#">Appointments</a>
+    <a href="#">Prescriptions</a>
+    <a href="#">Settings</a>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      Healthcare Dashboard
+    </div>
+    
+    <div class="stat-container">
+      <div class="card">
+        <h3>Total Patients</h3>
+        <div class="stat" id="totalPatients">--</div>
+        <button class="button" onclick="updateTotalPatients()">Update</button>
+      </div>
+      <div class="card">
+        <h3>Appointments Today</h3>
+        <div class="stat" id="appointmentsToday">--</div>
+        <button class="button" onclick="updateAppointmentsToday()">Update</button>
+      </div>
+      <div class=
